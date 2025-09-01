@@ -1,0 +1,12 @@
+[[CURRENCIES]]
+currency = "LKS"
+issuer = "rHCzP3auXJASWcom9e45Zzg5ZHgmpZiVy9"
+
+[[TOKENS]]
+currency = "LKS"
+issuer = "rHCzP3auXJASWcom9e45Zzg5ZHgmpZiVy9"
+name = "LKS Token"
+description = "We are proud to announce the launch of LKS COIN, the native digital currency that will power the entire LKS BROTHERS ecosystem. Rooted in the “Made in USA” concept, LKS COIN is designed to be the foundational payment and utility token for our diverse suite of ventures.
+LKS COIN will be the exclusive medium for all transactions within our IP Patent and Trademark registration platform, facilitating the secure, blockchain-based protection of American innovation. Its utility extends to our Software Factory, streamlining development and smart contract execution. Furthermore, LKS COIN will be integrated into the VARA and LKS SUMMIT platforms, enabling seamless access to our services and events.
+The coin will also be used in our online gaming division, including Stadium Tackle, as well as for financial operations within LKS Capital and for employee incentives. The use of LKS COIN on the XRP Ledger ensures rapid and efficient transactions, providing a transparent, decentralized, and robust infrastructure that aligns with our commitment to security and integrity. This is more than a currency; it is the engine of a new era for American business"
+image_url = "https://patrick841130.github.io/xrp-ledger/LKS-Token IMG.png"
