@@ -1,10 +1,431 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-    <title>LKS Token</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LKS BROTHERS LLC | Overview</title>
+    <style>
+        /* Google Fonts Import */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&family=Poppins:wght@400;600;700&display=swap');
+
+        /* CSS Reset & Basic Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #121212;
+            color: #E0E0E0;
+            line-height: 1.7;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header & Hero Section */
+        header {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .hero-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .hero-text {
+            max-width: 500px;
+            text-align: left;
+        }
+
+        .hero-text h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.8rem;
+            color: #D4AF37; /* Gold Color */
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.5rem;
+            color: #FFFFFF;
+            margin-bottom: 20px;
+        }
+
+        .hero-text p {
+            font-size: 1rem;
+            color: #BDBDBD;
+        }
+
+        .hero-image img {
+            max-width: 300px;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 0 35px rgba(212, 175, 55, 0.4);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 60px 20px;
+            border-bottom: 1px solid #333;
+        }
+        
+        section:last-of-type {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            color: #D4AF37;
+        }
+
+        /* Tokenomics Section */
+        .tokenomics-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .token-chart-card {
+            background-color: #1E1E1E;
+            padding: 30px;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .token-chart-card h3 {
+            text-align: center;
+            font-size: 1.4rem;
+            margin-bottom: 25px;
+            color: #FFFFFF;
+        }
+        
+        .pie-chart-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .pie-chart {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        
+        #initial-allocation-chart {
+            background: conic-gradient(
+                #2E86C1 0% 35%,      /* Air Drop/Donations */
+                #5DADE2 35% 82%,    /* Ecosystem */
+                #F1C40F 82% 92%,    /* Partnership */
+                #2ECC71 92% 97%,    /* Marketing */
+                #E74C3C 97% 100%     /* Team */
+            );
+        }
+
+        #reinvestment-chart {
+             background: conic-gradient(
+                #E74C3C 0% 35%,      /* Donations */
+                #F39C12 35% 82%,    /* Reinvested into Ecosystem */
+                #F1C40F 82% 92%,    /* Partnership */
+                #2ECC71 92% 97%,    /* Marketing */
+                #E67E22 97% 100%     /* Team */
+            );
+        }
+
+        .legend ul {
+            list-style: none;
+            font-size: 0.95rem;
+        }
+
+        .legend ul li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .legend-color {
+            width: 15px;
+            height: 15px;
+            border-radius: 3px;
+            margin-right: 10px;
+            display: inline-block;
+        }
+        
+        .token-description {
+            margin-top: 40px;
+        }
+        .token-description h4 {
+            color: #D4AF37;
+            margin-top: 20px;
+            font-size: 1.1rem;
+        }
+        .token-description p {
+            color: #BDBDBD;
+            font-size: 0.95rem;
+        }
+
+        /* Features & Benefits Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background: #1E1E1E;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid #D4AF37;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            color: #FFFFFF;
+            margin-bottom: 15px;
+        }
+        
+        .feature-card ul {
+            list-style: none;
+        }
+
+        .feature-card ul li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .feature-card ul li::before {
+            content: '✓';
+            color: #D4AF37;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Roadmap Section */
+        .roadmap-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .roadmap-stage {
+            background-color: #1E1E1E;
+            padding: 30px;
+            border-radius: 10px;
+            flex: 1;
+            min-width: 280px;
+            text-align: center;
+        }
+        .roadmap-stage h3 {
+            color: #D4AF37;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        /* Risks & Conclusion */
+        #risks ul {
+            list-style: none;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        #risks li {
+            background: #281c1c;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 4px solid #E74C3C;
+        }
+        
+        #conclusion p {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #0a0a0a;
+            color: #777;
+            font-size: 0.9rem;
+        }
+        footer p {
+            margin-bottom: 5px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-section {
+                flex-direction: column-reverse;
+            }
+            .hero-text {
+                text-align: center;
+            }
+            .pie-chart-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .legend ul {
+                padding-left: 0;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to the LKS Token Page!</h1>
-    <p>This page is for verifying our token information.</p>
+
+    <div class="container">
+
+        <header>
+            <div class="hero-section">
+                <div class="hero-text">
+                    <h1>LKS BROTHERS</h1>
+                    <p class="subtitle">Building Compliant Ecosystems for Decentralized Applications.</p>
+                    <p>
+                        LKS Brothers is a U.S.-based blockchain and Web3 company, launched as the American arm of LK Brothers. We focus on delivering high throughput and efficiency using unique Proof-of-Compliance and regulatory-aligned protocols, with a "Made in USA" emphasis.
+                    </p>
+                </div>
+                <div class="hero-image">
+                    <img src="https://storage.googleapis.com/maker-studio-5649a.appspot.com/users/pMhtUfDAIQPGSwfC02kS5X2sOg43/projects/8161109a-6b45-4229-bc9b-1d70e4475470/draft/files/7cd2f57a-97ab-4950-b08e-5b1b4d08dd6a" alt="LKS Coin">
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section id="tokenomics">
+                <h2>Tokenomics</h2>
+                <div class="tokenomics-container">
+                    <div class="token-chart-card">
+                        <h3>Initial Token Supply Allocation</h3>
+                        <div class="pie-chart-container">
+                            <div class="pie-chart" id="initial-allocation-chart"></div>
+                            <div class="legend">
+                                <ul>
+                                    <li><span class="legend-color" style="background-color: #2E86C1;"></span>Air Drop / Donations: 35%</li>
+                                    <li><span class="legend-color" style="background-color: #5DADE2;"></span>Ecosystem Allocation: 47%</li>
+                                    <li><span class="legend-color" style="background-color: #F1C40F;"></span>Partnership & Giveaways: 10%</li>
+                                    <li><span class="legend-color" style="background-color: #2ECC71;"></span>Marketing: 5%</li>
+                                    <li><span class="legend-color" style="background-color: #E74C3C;"></span>Team Allocation: 3%</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="token-chart-card">
+                        <h3>Revenue Reinvestment</h3>
+                         <div class="pie-chart-container">
+                            <div class="pie-chart" id="reinvestment-chart"></div>
+                            <div class="legend">
+                                <ul>
+                                    <li><span class="legend-color" style="background-color: #E74C3C;"></span>Donations: 35%</li>
+                                    <li><span class="legend-color" style="background-color: #F39C12;"></span>Reinvested into Ecosystem: 47%</li>
+                                    <li><span class="legend-color" style="background-color: #F1C40F;"></span>Partnership & Giveaways: 10%</li>
+                                    <li><span class="legend-color" style="background-color: #2ECC71;"></span>Marketing: 5%</li>
+                                    <li><span class="legend-color" style="background-color: #E67E22;"></span>Team Allocation: 3%</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="token-description">
+                    <p>LKS COIN prioritizes allocations that address real-world economic needs, such as job creation, infrastructure development, and technological advancement, fostering ecosystem vitality and user engagement.</p>
+                    <h4>Donations to Build America's Economy (35%)</h4>
+                    <p>As the cornerstone of our mission, this allocation directs funds into high-impact, job-creating initiatives across the United States, including data centers, steel manufacturing, and senior housing projects.</p>
+                    <h4>Ecosystem Allocation (47%)</h4>
+                    <p>This segment fuels our operational core, supporting innovation and scalability. It funds essential platforms like the IP Patent & Trademark Registry, The Software Factory, Stadium Tackle gaming, and LKS Capital.</p>
+                     <h4>Partnerships & Giveaways (10%)</h4>
+                    <p>Dedicated to expanding our network and community through strategic collaborations and promotional giveaways to increase user adoption and brand visibility.</p>
+                </div>
+            </section>
+            
+            <section id="features-benefits">
+                <h2>Platform Highlights</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li><strong>Smart Contracts:</strong> Fully programmable in XRP.</li>
+                            <li><strong>Scalability:</strong> Up to 65,000 TPS with 400ms block times.</li>
+                            <li><strong>Low Fees:</strong> Transaction costs around $0.00025.</li>
+                            <li><strong>DeFi/NFT Hub:</strong> A rich ecosystem with 1,500+ dApps.</li>
+                            <li><strong>Interoperability:</strong> Cross-chain transfers via Wormhole and CCTP.</li>
+                            <li><strong>Energy Efficient:</strong> Minimal energy use per transaction.</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card">
+                        <h3>Benefits for Users & Developers</h3>
+                        <ul>
+                            <li><strong>Speed & Efficiency:</strong> Sub-second finality for real-time applications.</li>
+                            <li><strong>Robust Ecosystem:</strong> From DeFi and NFTs to gaming and payments.</li>
+                            <li><strong>Developer-Friendly:</strong> Ample tools, grants, and compilers to attract builders.</li>
+                            <li><strong>Simple & Fast:</strong> A single-layer design ensures simplicity and high-speed transaction processing.</li>
+                             <li><strong>Market Dominance:</strong> A leading platform in DeFi and NFT activity with a rapidly growing market cap.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="roadmap">
+                <h2>Roadmap</h2>
+                <div class="roadmap-container">
+                    <div class="roadmap-stage">
+                        <h3>Short-Term (1-2 Months)</h3>
+                        <p>Launch Firedancer performance boost, expand blockchain space, and enhance Solana Pay adoption.</p>
+                    </div>
+                    <div class="roadmap-stage">
+                        <h3>Mid-Term (1-2 Years)</h3>
+                        <p>Enhance validator diversity, implement Alpenglow for sub-second finality, and expand tokenized property offerings.</p>
+                    </div>
+                    <div class="roadmap-stage">
+                        <h3>Long-Term (3+ Years)</h3>
+                        <p>Establish the platform as a global Web3 infrastructure leader, focusing on enterprise adoption and cross-chain interoperability.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="risks">
+                <h2>Risks & Challenges</h2>
+                <ul>
+                    <li><strong>Network Outages:</strong> Historical outages due to bot activity and bugs raise reliability concerns that are actively being addressed.</li>
+                    <li><strong>Centralization Concerns:</strong> Criticisms of validator concentration are being mitigated by growing node diversity through projects like Jito Labs and Firedancer.</li>
+                    <li><strong>Regulatory Scrutiny:</strong> Navigating the evolving global regulatory landscape remains a key challenge for the entire industry.</li>
+                </ul>
+            </section>
+            
+            <section id="conclusion">
+                <h2>Conclusion</h2>
+                <p>
+                    LKS COIN powers a fast, scalable, and low-cost Layer 1 blockchain for DeFi, NFTs, gaming, and more. Its strong ecosystem and unique consensus mechanism offer a competitive alternative to other chains, but it must continue to prioritize growth, decentralization, and regulatory navigation to succeed.
+                </p>
+            </section>
+
+        </main>
+    </div>
+
+    <footer>
+        <p><strong>LKS BROTHES LLC</strong></p>
+        <p>Entity ID: E51179692025-9</p>
+        <p>7121 Everly Court, Las Vegas, NV, 89131, USA</p>
+    </footer>
+
 </body>
 </html>
